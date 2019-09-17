@@ -1,6 +1,7 @@
 class WebsitesController < ApplicationController
 
-  before_action :authenticate_user!, only: [:esod, :pue, :pit, :intranet]
+  #before_action :authenticate_user!, only: [:esod, :pue, :pit, :intranet]
+  before_action :authenticate_user!, only: [:esod, :pue, :pit, :intranet, :egzaminy]
 
   respond_to :html
 
@@ -17,15 +18,14 @@ class WebsitesController < ApplicationController
   end
 
   def intranet
-  	redirect_to "https://testintranet.uke.gov.pl"
+#  	redirect_to "https://testintranet.uke.gov.pl"
   end
 
-  # without CSU
-  def netpar2015
+  def netpar2015 # without CSU
   	redirect_to "https://netpar2015.uke.gov.pl"
   end
 
-  def pola
+  def pola # without CSU
   	redirect_to "https://pola.uke.gov.pl"
   end
 

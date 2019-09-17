@@ -3,13 +3,13 @@
 
   <ul class="timeline">
 
-    <%= render "login_esod" %>
-    <%= render "login_pue" %>
-    <%= render "login_pit" %>
-    <%= render "login_intranet" %>
-    <%= render "login_netpar2015" %>
-    <%= render "login_pola" %>
-    <%= render "login_egzaminy" %>
+    <%= render "login_esod", cached: true %>
+    <%= render "login_pue", cached: true %>
+    <%= render "login_pit", cached: true %>
+    <%= render "login_intranet", cached: true %>
+    <%= render "login_netpar2015", cached: true %>
+    <%= render "login_pola", cached: true %>
+    <%= render "login_egzaminy", cached: true %>
 
   </ul>
 </div>
@@ -17,15 +17,15 @@
 <br>
 
 <div class="container bg-uke-noauthorization">
-  <h2 class="center">Systemy nie wymagające autoryzacji</h2>
+  <h2 class="center">Systemy bez autoryzacji</h2>
 
   <ul class="timeline">
 
-    <%= render "nologin_amator" %>
-    <%= render "nologin_wyszukiwarka" %>
-    <%= render "nologin_confirmation" %>
-    <%= render "nologin_mapbook" %>
-    <%= render "nologin_numeracja" %>
+    <%= render "nologin_amator", cached: true %>
+    <%= render "nologin_wyszukiwarka", cached: true %>
+    <%= render "nologin_confirmation", cached: true %>
+    <%= render "nologin_mapbook", cached: true %>
+    <%= render "nologin_numeracja", cached: true %>
 
   </ul>
 </div>

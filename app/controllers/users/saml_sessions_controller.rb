@@ -53,6 +53,11 @@ class Users::SamlSessionsController < Devise::SessionsController
   #   end
   # end
 
+  def after_sign_in_path_for(resource_or_scope)
+    # BJ 2019.07.23
+    #stored_location_for(resource_or_scope) || proposals_path(locale: locale)
+    stored_location_for(resource_or_scope) || root_path
+  end
 
   def metadata
     meta = OneLogin::RubySaml::Metadata.new
