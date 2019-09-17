@@ -1,0 +1,85 @@
+<div class="container bg-uke-authorization">
+  <h2 class="center">Wymagana autoryzacja</h2>
+
+  <ul class="timeline">
+
+    <%= render "login_esod" %>
+    <%= render "login_pue" %>
+    <%= render "login_pit" %>
+    <%= render "login_intranet" %>
+    <%= render "login_netpar2015" %>
+    <%= render "login_pola" %>
+
+  </ul>
+</div>
+
+<br>
+
+<div class="container bg-uke-noauthorization">
+  <h2 class="center">Systemy nie wymagające autoryzacji</h2>
+
+  <ul class="timeline">
+
+    <%= render "nologin_amator" %>
+    <%= render "nologin_wyszukiwarka" %>
+    <%= render "nologin_confirmation" %>
+    <%= render "nologin_mapbook" %>
+    <%= render "nologin_numeracja" %>
+
+  </ul>
+</div>
+
+<br>
+
+<div class="container">
+  <h2 class="center">Legenda</h2>
+
+  <ul class="timeline">
+
+    <li>
+      <div class="timeline-badge info"><i class="fa fa-globe-americas"></i></div>
+      <div class="timeline-panel">
+        <div class="timeline-heading">
+        </div>
+        <div class="timeline-body">
+          <p>System przeznaczony dla użytkowników zewnętrznych, dostępny w internecie, wymagający autoryzacji</p>
+        </div>
+      </div>
+    </li>
+
+    <li>
+      <div class="timeline-badge default"><i class="fa fa-globe-americas"></i></div>
+      <div class="timeline-panel">
+        <div class="timeline-heading">
+        </div>
+        <div class="timeline-body">
+          <p>System przeznaczony dla użytkowników zewnętrznych, dostępny w internecie, nie wymagający autoryzacji</p>
+        </div>
+      </div>
+    </li>
+
+    <li>
+      <div class="timeline-badge info"><i class="fa fa-cloud"></i></div>
+      <div class="timeline-panel">
+        <div class="timeline-heading">
+        </div>
+        <div class="timeline-body">
+          <p>System przeznaczony dla pracowników UKE, również dostępny w internecie, wymagający autoryzacji</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="timeline-inverted">
+      <div class="timeline-badge success"><span class="fa fa-home"></span></div>
+      <div class="timeline-panel">
+        <div class="timeline-heading">
+        </div>
+        <div class="timeline-body">
+          <p>System wewnętrzny przeznaczony dla pracowników UKE, wymagający autoryzacji</p>
+        </div>
+      </div>
+    </li>
+
+
+  </ul>
+</div>

@@ -1,0 +1,5 @@
+pl:
+  success: 'Sukces!'
+  info: 'Uwaga!'
+  warning: 'Ostrzeżenie!'
+  error: 'Błąd!'
