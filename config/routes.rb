@@ -21,12 +21,13 @@ Rails.application.routes.draw do
 
   scope "(:locale)", locale: /en|pl/ do
 
-    get 'websites/esod'
+    post 'websites/esod'
     get 'websites/pue'
     get 'websites/pit'
     get 'websites/intranet'
     get 'websites/netpar2015'
     get 'websites/pola'
+    get 'websites/egzaminy'
 
     get 'websites/amator'
     get 'websites/wyszukiwarka'

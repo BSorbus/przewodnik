@@ -29,6 +29,10 @@ class WebsitesController < ApplicationController
   	redirect_to "https://pola.uke.gov.pl"
   end
 
+  def egzaminy
+    redirect_to "https://egzaminy-test.uke.gov.pl/users/saml/sign_in"
+  end
+
 
   # without login
   def amator
