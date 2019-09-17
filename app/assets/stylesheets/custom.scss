@@ -189,8 +189,12 @@ img {
   margin: 0 auto;
 }
 
-.bg-uke-authorization {
+.bg-uke-authorization_false {
   background-color: lighten(#C7D540, 38.5%);
+}
+
+.bg-uke-authorization_true {
+  background-color: lighten(#5cb85c, 38.5%);
 }
 
 .bg-uke-noauthorization {

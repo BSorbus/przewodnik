@@ -1,5 +1,10 @@
-<div class="container bg-uke-authorization">
-  <h2 class="center">Wymagana autoryzacja</h2>
+<div class="container bg-uke-authorization_<%= user_signed_in? %>">
+  <% unless user_signed_in? %>
+    <h2 class="center">Wymagana autoryzacja</h2>
+  <% else %>
+    <h3 class="center"><%= current_user.first_name %> <%= current_user.last_name %>, <%= current_user.email %></h3>
+  <% end %>
+
 
   <ul class="timeline">
 
