@@ -1,7 +1,7 @@
 class WebsitesController < ApplicationController
 
   #before_action :authenticate_user!, only: [:esod, :pue, :pit, :intranet]
-  before_action :authenticate_user!, only: [:esod, :pue, :pit, :intranet, :egzaminy, :amator]
+  before_action :authenticate_user!, only: [:esod, :pue, :pit, :intranet, :egzaminy]
 
   respond_to :html
 
