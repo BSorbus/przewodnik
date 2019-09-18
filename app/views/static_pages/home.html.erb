@@ -13,6 +13,8 @@
       <ul class="timeline">
 
         <%= render "login_esod", cached: true %>
+        <%#= render "login_esod_admin", cached: true if current_user&.role == 'bi-wur' %> 
+        <%= render "login_esod_admin", cached: true %> 
         <%= render "login_pue", cached: true %>
         <%= render "login_pit", cached: true %>
         <%= render "login_intranet", cached: true %>
@@ -98,6 +100,17 @@
         </div>
         <div class="timeline-body">
           <p>System wewnętrzny przeznaczony dla pracowników UKE, nie wymagający autoryzacji</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="timeline-inverted">
+      <div class="timeline-badge danger">BI</div>
+      <div class="timeline-panel">
+        <div class="timeline-heading">
+        </div>
+        <div class="timeline-body">
+          <p>Panele administracyjne i programy narzędziowe przeznaczone dla administratorów</p>
         </div>
       </div>
     </li>
