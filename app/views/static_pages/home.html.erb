@@ -1,9 +1,8 @@
 <div class="container-fluid">
   
 <div class="row">
-  <div class="col-sm-6">
-
-    <div class="bg-uke-authorization_<%= user_signed_in? %>">
+  <div class="col-sm-6 bg-uke-authorization_<%= user_signed_in? %>">
+      <br>
       <% unless user_signed_in? %>
         <h2 class="center">Wymagana autoryzacja</h2>
       <% else %>
@@ -23,12 +22,10 @@
         <%= render "login_egzaminy", cached: true %>
 
       </ul>
-    </div>
   </div>
 
-  <div class="col-sm-6">
-
-    <div class="bg-uke-noauthorization">
+  <div class="col-sm-6 bg-uke-noauthorization">
+      <br>
       <h2 class="center">Systemy bez autoryzacji</h2>
 
       <ul class="timeline">
@@ -41,7 +38,6 @@
         <%= render "nologin_numeracja", cached: true %>
 
       </ul>
-    </div>
   </div>
 
 </div>
