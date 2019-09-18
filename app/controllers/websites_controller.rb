@@ -21,8 +21,12 @@ class WebsitesController < ApplicationController
 #  	redirect_to "https://testintranet.uke.gov.pl"
   end
 
+  def szkolenia # without CSU
+    redirect_to "http://e-szkolenia.uke.gov.pl/moodle/"
+  end
+
   def netpar2015 # without CSU
-  	redirect_to "https://netpar2015.uke.gov.pl"
+    redirect_to "https://netpar2015.uke.gov.pl"
   end
 
   def pola # without CSU
@@ -35,8 +39,12 @@ class WebsitesController < ApplicationController
 
 
   # without login
+  def legalis
+    redirect_to "https://legalis.uke.gov.pl/index.html"
+  end
+
   def amator
-  	redirect_to "https://amator.uke.gov.pl/pl"
+    redirect_to "https://amator.uke.gov.pl/pl"
   end
 
   def wyszukiwarka

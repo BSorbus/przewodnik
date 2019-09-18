@@ -25,10 +25,12 @@ Rails.application.routes.draw do
     get 'websites/pue'
     get 'websites/pit'
     get 'websites/intranet'
+    get 'websites/szkolenia'
     get 'websites/netpar2015'
     get 'websites/pola'
     get 'websites/egzaminy'
 
+    get 'websites/legalis'
     get 'websites/amator'
     get 'websites/wyszukiwarka'
     get 'websites/confirmation'
