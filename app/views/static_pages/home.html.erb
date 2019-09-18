@@ -4,9 +4,9 @@
   <div class="col-sm-6 bg-uke-authorization_<%= user_signed_in? %>">
       <br>
       <% unless user_signed_in? %>
-        <h2 class="center">Wymagana autoryzacja</h2>
+        <h3 class="center"><%= fa_icon('lock', text: ' Wymagana autoryzacja' ) %></h3>
       <% else %>
-        <h3 class="center"><%= current_user.first_name %> <%= current_user.last_name %>, <%= current_user.email %></h3>
+        <h3 class="center"><%= fa_icon('unlock', text: " #{current_user.first_name} #{current_user.last_name}, #{current_user.email}" ) %></h3>
       <% end %>
 
 
@@ -26,7 +26,7 @@
 
   <div class="col-sm-6 bg-uke-noauthorization">
       <br>
-      <h2 class="center">Systemy bez autoryzacji</h2>
+      <h3 class="center"><%= fa_icon('lock-open', text: ' Systemy bez autoryzacji' ) %></h3>
 
       <ul class="timeline">
 
