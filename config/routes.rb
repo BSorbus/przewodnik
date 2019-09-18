@@ -23,6 +23,7 @@ Rails.application.routes.draw do
 
     post 'websites/esod'
     get 'websites/pue'
+    get 'websites/pue_adm'
     get 'websites/pit'
     get 'websites/intranet'
     get 'websites/szkolenia'
