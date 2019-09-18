@@ -14,7 +14,7 @@ class WebsitesController < ApplicationController
   end
 
   def pue_adm
-    redirect_to "https://testadmpue.uke.gov.pl/api/token/sso"
+    redirect_to "https://testadmpue.uke.gov.pl/api/token/sso/init"
   end
 
   def pit
