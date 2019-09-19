@@ -22,11 +22,16 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /en|pl/ do
 
     post 'websites/esod'
+    get 'websites/my_account'
+    get 'websites/csuext'
+    get 'websites/test_csuext'
     get 'websites/pue'
     get 'websites/test_pue'
     get 'websites/pue_adm'
     get 'websites/test_pue_adm'
     get 'websites/pit'
+    get 'websites/cbo_admin'
+    get 'websites/test_cbo_admin'
     get 'websites/test_pit'
     get 'websites/intranet'
     get 'websites/test_intranet'

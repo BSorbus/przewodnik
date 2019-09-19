@@ -1,9 +1,24 @@
 class WebsitesController < ApplicationController
 
   #before_action :authenticate_user!, only: [:esod, :pue, :pit, :intranet]
-  before_action :authenticate_user!, only: [:esod, :pue, :pit, :intranet, :egzaminy]
+  before_action :authenticate_user!, except: [:my_account, :szkolenia, :netpar2015, :test_netpar2015, :pola, :test_pola, :legalis, :amator, :wyszukiwarka, :confirmation, :mapbook, :numeracja]
 
   respond_to :html
+
+  def my_account
+    url = Rails.application.secrets[:idp_for_production_instance] ? "https://csuext.uke.gov.pl/accounts" : "https://testcsuext.uke.gov.pl/accounts"
+    redirect_to url
+  end
+
+  def csuext
+    # nie
+    redirect_to "https://csuext.uke.gov.pl/api/dashboard/Auth/SamlInit"
+  end
+
+  def test_csuext
+    # OK
+    redirect_to "https://testcsuext.uke.gov.pl/api/dashboard/Auth/SamlInit"
+  end
 
   def esod
 #    <%= link_to 'https://esod.uke.gov.pl/sso/login', :method=>'post', :target => "_blank", class: "btn btn-primary" do %>   
@@ -30,11 +45,22 @@ class WebsitesController < ApplicationController
   end
 
   def pue_adm
+    # OK
     redirect_to "https://admpue.uke.gov.pl/api/token/sso/init"
   end
 
   def test_pue_adm
+     # 400
     redirect_to "https://testadmpue.uke.gov.pl/api/token/sso/init"
+  end
+
+  def cbo_admin
+    # nie
+    redirect_to "https://cboadmin.uke.gov.pl/api/token/sso/init"
+  end
+
+  def test_cbo_admin
+    redirect_to "https://testcboadmin.uke.gov.pl/login"
   end
 
   def pit
