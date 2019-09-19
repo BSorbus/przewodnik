@@ -61,11 +61,23 @@ class WebsitesController < ApplicationController
     redirect_to "https://netpar2015.uke.gov.pl"
   end
 
+  def test_netpar2015 # without CSU
+    redirect_to "https://netpar2015-test.uke.gov.pl"
+  end
+
   def pola # without CSU
-  	redirect_to "https://pola.uke.gov.pl"
+    redirect_to "https://pola.uke.gov.pl"
+  end
+
+  def test_pola # without CSU
+    redirect_to "https://pola-test.uke.gov.pl"
   end
 
   def egzaminy
+    redirect_to "https://egzaminy.uke.gov.pl/users/saml/sign_in"
+  end
+
+  def test_egzaminy
     redirect_to "https://egzaminy-test.uke.gov.pl/users/saml/sign_in"
   end
 

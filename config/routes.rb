@@ -32,7 +32,9 @@ Rails.application.routes.draw do
     get 'websites/test_intranet'
     get 'websites/szkolenia'
     get 'websites/netpar2015'
+    get 'websites/test_netpar2015'
     get 'websites/pola'
+    get 'websites/test_pola'
     get 'websites/egzaminy'
     get 'websites/test_egzaminy'
 
