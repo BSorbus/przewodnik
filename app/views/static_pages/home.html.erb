@@ -13,12 +13,17 @@
       <ul class="timeline">
 
         <%= render "login_esod", cached: true %>
-        <%#= render "login_esod_admin", cached: true if current_user&.role == 'bi-wur' %> 
-        <%= render "login_esod_admin", cached: true if show_extend == true %> 
+        <%= render "login_test_esod", cached: true if (show_test) %>
+        <%= render "login_esod_admin", cached: true if (show_bi) %> 
+        <%= render "login_test_esod_admin", cached: true if (show_bi && show_test) %> 
         <%= render "login_pue", cached: true %>
-        <%= render "login_pue_adm", cached: true if show_extend == true %>
+        <%= render "login_test_pue", cached: true if (show_test) %>
+        <%= render "login_pue_adm", cached: true if (show_bi) %>
+        <%= render "login_test_pue_adm", cached: true if (show_bi && show_test) %>
         <%= render "login_pit", cached: true %>
+        <%= render "login_test_pit", cached: true if (show_test) %>
         <%= render "login_intranet", cached: true %>
+        <%= render "login_test_intranet", cached: true if (show_test) %>
         <%= render "login_szkolenia", cached: true %>
         <%= render "login_netpar2015", cached: true %>
         <%= render "login_pola", cached: true %>

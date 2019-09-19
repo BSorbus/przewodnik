@@ -6,23 +6,51 @@ class WebsitesController < ApplicationController
   respond_to :html
 
   def esod
-#    <%= link_to 'https://testesod.uke.gov.pl/sso/login#', :method=>'post', :target => "_blank", class: "btn btn-primary" do %> 	
+#    <%= link_to 'https://esod.uke.gov.pl/sso/login', :method=>'post', :target => "_blank", class: "btn btn-primary" do %>   
+  end
+
+  def test_esod
+#    <%= link_to 'https://testesod.uke.gov.pl/sso/login', :method=>'post', :target => "_blank", class: "btn btn-primary" do %>   
+  end
+
+  def esod_admin
+#    <%= link_to 'https://esod.uke.gov.pl/admin/sso/login', :method=>'post', :target => "_blank", class: "btn btn-primary" do %>   
+  end
+
+  def test_esod_admin
+#    <%= link_to 'https://testesod.uke.gov.pl/admin/sso/login', :method=>'post', :target => "_blank", class: "btn btn-primary" do %>   
   end
 
   def pue
+    redirect_to "https://pue.uke.gov.pl/api/Token/Sso/Init"
+  end
+
+  def test_pue
     redirect_to "https://testpue.uke.gov.pl/api/Token/Sso/Init"
   end
 
   def pue_adm
+    redirect_to "https://admpue.uke.gov.pl/api/token/sso/init"
+  end
+
+  def test_pue_adm
     redirect_to "https://testadmpue.uke.gov.pl/api/token/sso/init"
   end
 
   def pit
-  	redirect_to "https://testpit.uke.gov.pl/umbraco/surface/SSO/Login"
+    redirect_to "https://pit.uke.gov.pl/umbraco/surface/SSO/Login"
+  end
+
+  def test_pit
+    redirect_to "https://testpit.uke.gov.pl/umbraco/surface/SSO/Login"
   end
 
   def intranet
-#  	redirect_to "https://testintranet.uke.gov.pl"
+#   redirect_to "https://intranet.uke.gov.pl"
+  end
+
+  def test_intranet
+#   redirect_to "https://testintranet.uke.gov.pl"
   end
 
   def szkolenia # without CSU

@@ -5,8 +5,9 @@ class StaticPagesController < ApplicationController
   respond_to :html
 
   def home
-    show_extend = params[:run] == 'bi'
-    render :home, locals: { show_extend: show_extend } 
+    show_bi = params[:bi] == 'true'
+    show_test = params[:test] == 'true'
+    render :home, locals: { show_bi: show_bi, show_test: show_test } 
   end
 
 end
