@@ -14,9 +14,9 @@
 
         <%= render "login_esod", cached: true %>
         <%#= render "login_esod_admin", cached: true if current_user&.role == 'bi-wur' %> 
-        <%= render "login_esod_admin", cached: true %> 
+        <%= render "login_esod_admin", cached: true if show_extend == true %> 
         <%= render "login_pue", cached: true %>
-        <%= render "login_pue_adm", cached: true %>
+        <%= render "login_pue_adm", cached: true if show_extend == true %>
         <%= render "login_pit", cached: true %>
         <%= render "login_intranet", cached: true %>
         <%= render "login_szkolenia", cached: true %>
