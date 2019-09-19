@@ -1,7 +1,7 @@
 <div class="container-fluid">
   
-<div class="row">
-  <div class="col-sm-6 bg-uke-authorization_<%= user_signed_in? %>">
+  <div class="row">
+    <div class="col-sm-6 bg-uke-authorization_<%= user_signed_in? %>">
       <br>
       <% unless user_signed_in? %>
         <h3 class="center"><%= fa_icon('lock', text: ' Wymagana autoryzacja' ) %></h3>
@@ -19,7 +19,7 @@
           <%= render "login_esod_admin", cached: true if (show_bi) %> 
           <%= render "login_pue", cached: true %>
           <%= render "login_pue_adm", cached: true if (show_bi) %>
-          <%#= render "login_cbo_admin", cached: true if (show_bi) %>
+          <%= render "login_cbo_admin", cached: true if (show_bi) %>
           <%= render "login_pit", cached: true %>
           <%= render "login_intranet", cached: true %>
           <%= render "login_szkolenia", cached: true %>
@@ -34,7 +34,7 @@
           <%= render "login_test_esod_admin", cached: true if (show_bi) %> 
           <%= render "login_test_pue", cached: true %>
           <%= render "login_test_pue_adm", cached: true if (show_bi) %>
-          <%#= render "login_test_cbo_admin", cached: true if (show_bi) %>
+          <%= render "login_test_cbo_admin", cached: true if (show_bi) %>
           <%= render "login_test_pit", cached: true %>
           <%= render "login_test_intranet", cached: true %>
           <%= render "login_test_netpar2015", cached: true %>
@@ -44,9 +44,9 @@
         <% end %>
 
       </ul>
-  </div>
+    </div>
 
-  <div class="col-sm-6 bg-uke-noauthorization">
+    <div class="col-sm-6 bg-uke-noauthorization">
       <br>
       <h3 class="center"><%= fa_icon('lock-open', text: ' Systemy bez autoryzacji' ) %></h3>
 
@@ -64,77 +64,117 @@
 
 </div>
 
-<div class="container">
+
+<hr>
+
+
+<div class="container-fluid">
+
   <h2 class="center">Legenda</h2>
 
-  <ul class="timeline">
+  <div class="row">
 
-    <li>
-      <div class="timeline-badge info"><i class="fa fa-globe-americas"></i></div>
-      <div class="timeline-panel">
-        <div class="timeline-heading">
-        </div>
-        <div class="timeline-body">
-          <p>System przeznaczony dla użytkowników zewnętrznych, dostępny w internecie, wymagający autoryzacji</p>
-        </div>
-      </div>
-    </li>
+    <div class="col-sm-6">
+      <ul class="timeline">
 
-    <li>
-      <div class="timeline-badge default"><i class="fa fa-globe-americas"></i></div>
-      <div class="timeline-panel">
-        <div class="timeline-heading">
-        </div>
-        <div class="timeline-body">
-          <p>System przeznaczony dla użytkowników zewnętrznych, dostępny w internecie, nie wymagający autoryzacji</p>
-        </div>
-      </div>
-    </li>
+        <li class="timeline-inverted">
+          <div class="timeline-badge success"><span class="fa fa-home"></span></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+            </div>
+            <div class="timeline-body">
+              <p>System wewnętrzny przeznaczony dla pracowników UKE, wymagający autoryzacji</p>
+            </div>
+          </div>
+        </li>
 
-    <li>
-      <div class="timeline-badge info"><i class="fa fa-cloud"></i></div>
-      <div class="timeline-panel">
-        <div class="timeline-heading">
-        </div>
-        <div class="timeline-body">
-          <p>System przeznaczony dla pracowników UKE, również dostępny w internecie, wymagający autoryzacji</p>
-        </div>
-      </div>
-    </li>
+        <li class="timeline-inverted">
+          <div class="timeline-badge default"><span class="fa fa-home"></span></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+            </div>
+            <div class="timeline-body">
+              <p>System wewnętrzny przeznaczony dla pracowników UKE, nie wymagający autoryzacji</p>
+            </div>
+          </div>
+        </li>
 
-    <li class="timeline-inverted">
-      <div class="timeline-badge success"><span class="fa fa-home"></span></div>
-      <div class="timeline-panel">
-        <div class="timeline-heading">
-        </div>
-        <div class="timeline-body">
-          <p>System wewnętrzny przeznaczony dla pracowników UKE, wymagający autoryzacji</p>
-        </div>
-      </div>
-    </li>
+        <li class="timeline-inverted">
+          <div class="timeline-badge danger">BI</div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+            </div>
+            <div class="timeline-body">
+              <p>Panele administracyjne i programy narzędziowe przeznaczone dla administratorów</p>
+            </div>
+          </div>
+        </li>
 
-    <li class="timeline-inverted">
-      <div class="timeline-badge default"><span class="fa fa-home"></span></div>
-      <div class="timeline-panel">
-        <div class="timeline-heading">
-        </div>
-        <div class="timeline-body">
-          <p>System wewnętrzny przeznaczony dla pracowników UKE, nie wymagający autoryzacji</p>
-        </div>
-      </div>
-    </li>
+        <li class="timeline-inverted">
+          <div class="timeline-panel">
+            <div class="folded-csu"><h3>CSU</h3></div>
+            <div class="timeline-heading">
+            </div>
+            <div class="timeline-body">
+              <p>Program zintegrowany z Centralanym Systemem Uwierzytelniania UKE</p>
+            </div>
+          </div>
+        </li>
 
-    <li class="timeline-inverted">
-      <div class="timeline-badge danger">BI</div>
-      <div class="timeline-panel">
-        <div class="timeline-heading">
-        </div>
-        <div class="timeline-body">
-          <p>Panele administracyjne i programy narzędziowe przeznaczone dla administratorów</p>
-        </div>
-      </div>
-    </li>
+      </ul>
 
+    </div>
 
-  </ul>
+    <div class="col-sm-6">
+      <ul class="timeline">
+        <li>
+          <div class="timeline-badge info"><i class="fa fa-globe-americas"></i></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+            </div>
+            <div class="timeline-body">
+              <p>System przeznaczony dla użytkowników zewnętrznych, dostępny w internecie, wymagający autoryzacji</p>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="timeline-badge default"><i class="fa fa-globe-americas"></i></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+            </div>
+            <div class="timeline-body">
+              <p>System przeznaczony dla użytkowników zewnętrznych, dostępny w internecie, nie wymagający autoryzacji</p>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="timeline-badge info"><i class="fa fa-cloud"></i></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+            </div>
+            <div class="timeline-body">
+              <p>System przeznaczony dla pracowników UKE, również dostępny w internecie, wymagający autoryzacji</p>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="timeline-panel">
+            <div class="folded-csu-future"><h3>CSU</h3></div>
+            <div class="timeline-heading">
+            </div>
+            <div class="timeline-body">
+              <p>Planowana integracja z Centralanym Systemem Uwierzytelniania UKE</p>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
 </div>

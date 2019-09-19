@@ -1,3 +1,6 @@
+$timeline-backgroundlabel: lighten(#31418D, 60.5%); /*#fff;*/
+$brand-primary:     #1B3C8F;
+
 .timeline {
   list-style: none;
   padding: 20px 0 20px;
@@ -10,7 +13,7 @@
   position: absolute;
   content: " ";
   width: 3px;
-  background-color: #fff; /* #eeeeee; */
+  background-color: #BECC25; /*#fff;  #eeeeee; */
   left: 50%;
   margin-left: -1.5px;
 }
@@ -41,7 +44,7 @@
 }
 
 .timeline > li > .timeline-panel {
-  background-color: #fff;
+  background-color: $timeline-backgroundlabel; /*#fff;*/
   width: 46%;
   float: left;
   border: 1px solid #d4d4d4;
@@ -70,8 +73,8 @@
   right: -14px;
   display: inline-block;
   border-top: 14px solid transparent;
-  border-left: 14px solid #fff;
-  border-right: 0 solid #fff;
+  border-left: 14px solid $timeline-backgroundlabel;/*#fff;*/
+  border-right: 0 solid $timeline-backgroundlabel;/*#fff;*/
   border-bottom: 14px solid transparent;
   content: " ";
 }
@@ -134,9 +137,9 @@
 }
 
 .timeline-title {
-  font-weight: 600 !important; /*BJ*/
+  font-weight: bold !important; /*BJ*/
   margin-top: 0;
-  color: inherit;
+  color: $brand-primary;                     /*inherit;*/
 }
 
 .timeline-body > p,

@@ -1,0 +1,83 @@
+/*
+Księga znaku UKE
+//niebieski
+RGB 49 / 65 / 141
+#31418D
+//oliwka
+RGB 199 / 213 / 64
+#C7D540
+//ciemno szary
+RGB 74 / 74 / 73
+#4A4A49
+//szary 
+RGB 218 / 218 / 218
+#DADADA
+*/
+
+
+$RibbonBackground: #31418D;
+
+.folded-csu h3 {
+    background: $RibbonBackground;
+    background-image: radial-gradient(transparent 30%, rgba(0, 0, 0, 0.2));
+    border: 0 solid rgba(0,0,0,0.2);
+    color: #fff;
+    font-size: 13px; 
+  //font-size: 14px;
+  //font-weight: bold;
+    position: relative;
+    text-shadow: -1px -1px 1px rgba(0,0,0,0.2);
+}
+
+.folded-csu h3 {
+    border-width: 1px 1px 2px;
+    margin: 0;
+    padding: 4px 20px;
+    position: absolute;
+    right: 2px;
+    margin-top: -31px; // do góry-do dołu
+    margin-right: -16px; // prawo-lewo
+}
+.folded-csu h3:after {
+    border-width: 7px;
+    border-style: solid;
+    border-color: #134 transparent transparent #134;
+    bottom: -15px;
+    content: "";
+    position: absolute;
+    right: -1px;
+}
+
+
+$RibbonBackgroundFuture: #DADADA; 
+
+.folded-csu-future h3 {
+    background: $RibbonBackgroundFuture;
+    background-image: radial-gradient(transparent 30%, rgba(0, 0, 0, 0.2));
+    border: 0 solid rgba(0,0,0,0.2);
+    color: #fff;
+    font-size: 13px; 
+  //font-size: 14px;
+  //font-weight: bold;
+    position: relative;
+    text-shadow: -1px -1px 1px rgba(0,0,0,0.2);
+}
+
+.folded-csu-future h3 {
+    border-width: 1px 1px 2px;
+    margin: 0;
+    padding: 4px 20px;
+    position: absolute;
+    right: 2px;
+    margin-top: -31px; // do góry-do dołu
+    margin-right: -16px; // prawo-lewo
+}
+.folded-csu-future h3:after {
+    border-width: 7px;
+    border-style: solid;
+    border-color: #134 transparent transparent #134;
+    bottom: -15px;
+    content: "";
+    position: absolute;
+    right: -1px;
+}
