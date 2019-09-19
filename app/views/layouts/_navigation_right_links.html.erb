@@ -4,11 +4,13 @@
 
     <ul class="dropdown-menu">
 
+      <% unless Rails.application.secrets[:idp_for_production_instance] %>
       <li>
         <%= link_to websites_my_account_path do %>
           <span class="fa fa-cog"></span>&nbsp;<%=t "devise.link_to.edit_registration" %>
         <% end %>
       </li>
+      <% end %>
 
       <li>
         <%= link_to destroy_user_session_path, :method=>'delete' do %>
