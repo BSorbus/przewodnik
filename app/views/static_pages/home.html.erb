@@ -5,37 +5,18 @@
       <br>
       <% unless user_signed_in? %>
         <h3 class="center"><%= fa_icon('lock', text: ' Systemy wymagające autoryzacji' ) %></h3>
+
+        <%= render "no_signed_partial_user", cached: true %>
+
       <% else %>
         <h3 class="center"><%= fa_icon('unlock', text: " #{current_user.first_name} #{current_user.last_name}, #{current_user.email}" ) %></h3>
+
+
+        <%= render "signed_partial_user", cached: true %>
+
       <% end %>
 
 
-      <ul class="timeline">
-
-        <% if Rails.application.secrets[:idp_for_production_instance] %>
-
-          <%= render "login_esod", cached: true %>
-          <%= render "login_pue", cached: true %>
-          <%= render "login_pit", cached: true %>
-          <%= render "login_intranet", cached: true %>
-          <%= render "login_szkolenia", cached: true %>
-          <%= render "login_netpar2015", cached: true %>
-          <%= render "login_pola", cached: true %>
-          <%= render "login_egzaminy", cached: true %>
-
-        <% else %>
-
-          <%= render "login_test_esod", cached: true %>
-          <%= render "login_test_pue", cached: true %>
-          <%= render "login_test_pit", cached: true %>
-          <%= render "login_test_intranet", cached: true %>
-          <%= render "login_test_netpar2015", cached: true %>
-          <%= render "login_test_pola", cached: true %>
-          <%= render "login_test_egzaminy", cached: true %>
-
-        <% end %>
-
-      </ul>
     </div>
 
     <div class="col-sm-6 bg-uke-noauthorization">
@@ -64,25 +45,13 @@
     <div class="row">
       <div class="col-sm-6 bg-uke-authorization_<%= user_signed_in? %>">
 
-        <ul class="timeline">
 
-          <% if Rails.application.secrets[:idp_for_production_instance] %>
+        <% if user_signed_in? %>
 
-            <%= render "login_csuext", cached: true %>
-            <%= render "login_esod_admin", cached: true %> 
-            <%= render "login_pue_adm", cached: true %>
-            <%= render "login_cbo_admin", cached: true %>
+          <%= render "signed_partial_extend", cached: true %>
 
-          <% else %>
+        <% end %>
 
-            <%= render "login_test_csuext", cached: true %>
-            <%= render "login_test_esod_admin", cached: true %> 
-            <%= render "login_test_pue_adm", cached: true %>
-            <%= render "login_test_cbo_admin", cached: true %>
-
-          <% end %>
-
-        </ul>
       </div>
 
       <div class="col-sm-6 bg-uke-noauthorization">
