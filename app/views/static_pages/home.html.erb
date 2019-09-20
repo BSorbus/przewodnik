@@ -4,7 +4,7 @@
     <div class="col-sm-6 bg-uke-authorization_<%= user_signed_in? %>">
       <br>
       <% unless user_signed_in? %>
-        <h3 class="center"><%= fa_icon('lock', text: ' Wymagana autoryzacja' ) %></h3>
+        <h3 class="center"><%= fa_icon('lock', text: ' Systemy wymagające autoryzacji' ) %></h3>
       <% else %>
         <h3 class="center"><%= fa_icon('unlock', text: " #{current_user.first_name} #{current_user.last_name}, #{current_user.email}" ) %></h3>
       <% end %>
@@ -129,17 +129,6 @@
             </div>
             <div class="timeline-body">
               <p>System wewnętrzny przeznaczony dla pracowników UKE, nie wymagający autoryzacji</p>
-            </div>
-          </div>
-        </li>
-
-        <li class="timeline-inverted">
-          <div class="timeline-badge danger">BI</div>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-            </div>
-            <div class="timeline-body">
-              <p>Panele administracyjne i programy narzędziowe przeznaczone dla administratorów</p>
             </div>
           </div>
         </li>
