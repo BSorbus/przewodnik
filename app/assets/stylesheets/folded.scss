@@ -15,7 +15,7 @@ RGB 218 / 218 / 218
 */
 
 
-$RibbonBackground: #31418D;
+$RibbonBackground: #C7D540;
 
 .folded-csu h3 {
     background: $RibbonBackground;
@@ -49,7 +49,7 @@ $RibbonBackground: #31418D;
 }
 
 
-$RibbonBackgroundFuture: #C7D540; 
+$RibbonBackgroundFuture: #31418D; 
 
 .folded-csu-future h3 {
     background: $RibbonBackgroundFuture;
@@ -83,7 +83,7 @@ $RibbonBackgroundFuture: #C7D540;
 }
 
 
-$RibbonBackgroundWithoutCSU: #DADADA; 
+$RibbonBackgroundWithoutCSU: #4A4A49; 
 
 .folded-without-csu h3 {
     background: $RibbonBackgroundWithoutCSU;
