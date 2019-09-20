@@ -24,9 +24,15 @@
         <ul><h5><span class="fa fa-globe"></span>&nbsp;&nbsp;<%= link_to('Twitter', 'https://twitter.com/uke2uke', target: "_blank") %></h5></ul>
       <hr class="visible-xs">
 
-      <h6 class="pull-right">&copy; 2019 UKE</h6>
+      <h6 class="pull-right no-underline"><a href="#extend_applications_area" data-toggle="collapse">&copy; 2019 UKE-BI-WUR</a></h6>
 
     </div>
   </div>  <!-- /row -->
+
+  <script>
+    $('#extend_applications_area').on('shown.bs.collapse', function () {
+      $('html, body').animate({ scrollTop: $('#extend_applications_area').offset().top - 45 }, 'slow');
+    });
+  </script>
 
 </footer>

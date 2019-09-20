@@ -14,12 +14,8 @@
 
         <% if Rails.application.secrets[:idp_for_production_instance] %>
 
-          <%= render "login_csuext", cached: true  if (show_bi) %>
           <%= render "login_esod", cached: true %>
-          <%= render "login_esod_admin", cached: true if (show_bi) %> 
           <%= render "login_pue", cached: true %>
-          <%= render "login_pue_adm", cached: true if (show_bi) %>
-          <%= render "login_cbo_admin", cached: true if (show_bi) %>
           <%= render "login_pit", cached: true %>
           <%= render "login_intranet", cached: true %>
           <%= render "login_szkolenia", cached: true %>
@@ -29,12 +25,8 @@
 
         <% else %>
 
-          <%= render "login_test_csuext", cached: true  if (show_bi) %>
           <%= render "login_test_esod", cached: true %>
-          <%= render "login_test_esod_admin", cached: true if (show_bi) %> 
           <%= render "login_test_pue", cached: true %>
-          <%= render "login_test_pue_adm", cached: true if (show_bi) %>
-          <%= render "login_test_cbo_admin", cached: true if (show_bi) %>
           <%= render "login_test_pit", cached: true %>
           <%= render "login_test_intranet", cached: true %>
           <%= render "login_test_netpar2015", cached: true %>
@@ -60,6 +52,48 @@
         <%= render "nologin_numeracja", cached: true %>
 
       </ul>
+  </div>
+
+</div>
+
+
+<div id="extend_applications_area" class="collapse">
+  <hr>
+  <div class="container-fluid">
+    
+    <br>
+    <h3 class="center"><%= fa_icon('user-cog', text: ' Strefa Administratora!' ) %></h3>
+    <div class="row">
+      <div class="col-sm-6 bg-uke-authorization_<%= user_signed_in? %>">
+
+        <ul class="timeline">
+
+          <% if Rails.application.secrets[:idp_for_production_instance] %>
+
+            <%= render "login_csuext", cached: true %>
+            <%= render "login_esod_admin", cached: true %> 
+            <%= render "login_pue_adm", cached: true %>
+            <%= render "login_cbo_admin", cached: true %>
+
+          <% else %>
+
+            <%= render "login_test_csuext", cached: true %>
+            <%= render "login_test_esod_admin", cached: true %> 
+            <%= render "login_test_pue_adm", cached: true %>
+            <%= render "login_test_cbo_admin", cached: true %>
+
+          <% end %>
+
+        </ul>
+      </div>
+
+      <div class="col-sm-6 bg-uke-noauthorization">
+        <br>
+
+      </div>
+
+    </div>
+
   </div>
 
 </div>
