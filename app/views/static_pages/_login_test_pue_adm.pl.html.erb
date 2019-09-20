@@ -3,7 +3,8 @@
   <div class="timeline-panel no-underline">
     <div class="folded-csu"><h3>CSU</h3></div>
     
-    <%= link_to websites_test_pue_adm_path do %>
+    <%#= link_to websites_test_pue_adm_path do %>
+    <%= link_to 'https://testadmpue.uke.gov.pl/api/token/sso/init', :target => "_blank" do %>
       <div class="timeline-heading">
         <div class="col-sm-9"><h4 class="timeline-title">TEST PUE ADM <br><small>S&T</small></h4></div>
         <div class="col-sm-3"><%= image_tag("pue.png", class: "img-circle" ) %></div>

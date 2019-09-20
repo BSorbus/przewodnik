@@ -1,7 +1,9 @@
 <li>
   <div class="timeline-badge default"><i class="fa fa-globe-americas"></i></div>
   <div class="timeline-panel no-underline">
-    <%= link_to websites_mapbook_path do %>
+
+    <%#= link_to websites_mapbook_path do %>
+    <%= link_to 'https://mapbook.uke.gov.pl', :target => "_blank" do %>   
       <div class="timeline-heading">
         <div class="col-sm-9"><h4 class="timeline-title">MapBook <br><small>Biuro Informatyki</small></h4></div>
         <div class="col-sm-3"><%= image_tag("mapbook.png", class: "img-circle" ) %></div>

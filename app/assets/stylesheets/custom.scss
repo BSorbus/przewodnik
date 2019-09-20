@@ -198,6 +198,17 @@ legend.my-fieldset {
     border-bottom:none;
 }
 
+.no-underline > a,
+.no-underline > a:hover {
+  text-decoration: none !important;
+  color: inherit;
+}
+
+.no-mouse-pointer > a,
+.no-mouse-pointer > a:hover {
+  cursor: default;
+}
+
 
 img {
   @extend .img-responsive;
