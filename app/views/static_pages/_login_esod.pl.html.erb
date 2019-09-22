@@ -2,9 +2,6 @@
   <div class="timeline-badge success"><span class="fa fa-home"></span></div>
   <div class="timeline-panel no-underline">
     <div class="folded-csu"><h3>CSU</h3></div>
-<!-- 
-    <%#= link_to 'https://esod.uke.gov.pl/sso/login', :method=>'post', :target => "_blank" do %>
- -->
     <%= link_to websites_with_sso_login_path(app: 'esod') do %>
       <div class="timeline-heading">
         <div class="col-sm-9"><h4 class="timeline-title">ESOD <br><small>Tensoft</small></h4></div>
