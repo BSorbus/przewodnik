@@ -3,8 +3,10 @@
   <div class="timeline-panel no-underline">
     <div class="folded-csu"><h3>CSU</h3></div>
 
-    <%#= link_to websites_csuext_path do %>
-    <%= link_to 'https://csuext.uke.gov.pl/api/dashboard/Auth/SamlInit', :target => "_blank" do %>
+<!-- 
+    <%#= link_to 'https://csuext.uke.gov.pl/api/dashboard/Auth/SamlInit', :target => "_blank" do %>
+ -->
+    <%= link_to websites_with_sso_login_path(app: 'csuext') do %>
       <div class="timeline-heading">
         <div class="col-sm-9"><h4 class="timeline-title">CSUEXT <br><small>S&T</small></h4></div>
         <div class="col-sm-3"><%= image_tag("wso2.jpg", class: "img-circle" ) %></div>

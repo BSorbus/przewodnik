@@ -3,12 +3,12 @@
   <div class="timeline-panel no-underline">
     <div class="folded-csu"><h3>CSU</h3></div>
 
-    <%#= link_to websites_cbo_admin_path do %>
 <!-- 
     "https://cboadmin.uke.gov.pl/api/token/sso/init"
     "https://testcboadmin.uke.gov.pl/login"
+    <%#= link_to 'https://cboadmin.uke.gov.pl', :target => "_blank" do %>
  -->
-    <%= link_to 'https://cboadmin.uke.gov.pl', :target => "_blank" do %>
+    <%= link_to websites_with_sso_login_path(app: 'cbo_admin') do %>
       <div class="timeline-heading">
         <div class="col-sm-9"><h4 class="timeline-title">CBO ADMIN <br><small>S&T</small></h4></div>
         <div class="col-sm-3"><%= image_tag("pue.png", class: "img-circle" ) %></div>

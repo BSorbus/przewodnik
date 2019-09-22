@@ -1,8 +1,7 @@
 class WebsitesController < ApplicationController
 
-  #before_action :authenticate_user!, only: [:esod, :pue, :pit, :intranet]
-  before_action :authenticate_user!, except: [:my_account, :szkolenia, :netpar2015, :test_netpar2015, :pola, :test_pola, :legalis, :amator, :wyszukiwarka, :confirmation, :mapbook, :numeracja]
-
+  before_action :authenticate_user!, only: [:with_sso_login]
+ 
   respond_to :html
 
   def my_account
@@ -10,127 +9,31 @@ class WebsitesController < ApplicationController
     redirect_to url
   end
 
-  def csuext
-    # nie
-    redirect_to "https://csuext.uke.gov.pl/api/dashboard/Auth/SamlInit"
+  def with_sso_login
+    check_with_sso_login(params[:app])
+    session[:app] = params[:app]
+    redirect_to root_path()
   end
 
-  def test_csuext
-    # OK
-    redirect_to "https://testcsuext.uke.gov.pl/api/dashboard/Auth/SamlInit"
+  def without_sso_login
+    check_without_sso_login(params[:app])
+    session[:app] = params[:app]
+    redirect_to root_path()
   end
 
-  def esod
-#    <%= link_to 'https://esod.uke.gov.pl/sso/login', :method=>'post', :target => "_blank", class: "btn btn-primary" do %>   
-  end
+  private
+    def check_with_sso_login(appname)
+      unless ['cbo_admin', 'csuext', 'egzaminy', 'esod', 'esod_admin', 'intranet', 'pit', 'pue', 'pue_admin', 
+              'test_cbo_admin', 'test_csuext', 'test_egzaminy', 'test_esod', 'test_esod_admin', 'test_intranet', 'test_pit', 'test_pue', 'test_pue_adm'].include?(appname)
+         raise "Ruby injection"
+      end
+    end
 
-  def test_esod
-#    <%= link_to 'https://testesod.uke.gov.pl/sso/login', :method=>'post', :target => "_blank", class: "btn btn-primary" do %>   
-  end
-
-  def esod_admin
-#    <%= link_to 'https://esod.uke.gov.pl/admin/sso/login', :method=>'post', :target => "_blank", class: "btn btn-primary" do %>   
-  end
-
-  def test_esod_admin
-#    <%= link_to 'https://testesod.uke.gov.pl/admin/sso/login', :method=>'post', :target => "_blank", class: "btn btn-primary" do %>   
-  end
-
-  def pue
-    redirect_to "https://pue.uke.gov.pl/api/Token/Sso/Init"
-  end
-
-  def test_pue
-    redirect_to "https://testpue.uke.gov.pl/api/Token/Sso/Init"
-  end
-
-  def pue_adm
-    # OK
-    redirect_to "https://admpue.uke.gov.pl/api/token/sso/init"
-  end
-
-  def test_pue_adm
-     # 400
-    redirect_to "https://testadmpue.uke.gov.pl/api/token/sso/init"
-  end
-
-  def cbo_admin
-    # nie
-    redirect_to "https://cboadmin.uke.gov.pl/api/token/sso/init"
-  end
-
-  def test_cbo_admin
-    redirect_to "https://testcboadmin.uke.gov.pl/login"
-  end
-
-  def pit
-    redirect_to "https://pit.uke.gov.pl/umbraco/surface/SSO/Login"
-  end
-
-  def test_pit
-    redirect_to "https://testpit.uke.gov.pl/umbraco/surface/SSO/Login"
-  end
-
-  def intranet
-#   redirect_to "https://intranet.uke.gov.pl"
-  end
-
-  def test_intranet
-#   redirect_to "https://testintranet.uke.gov.pl"
-  end
-
-  def szkolenia # without CSU
-    redirect_to "http://e-szkolenia.uke.gov.pl/moodle/"
-  end
-
-  def netpar2015 # without CSU
-    redirect_to "https://netpar2015.uke.gov.pl"
-  end
-
-  def test_netpar2015 # without CSU
-    redirect_to "https://netpar2015-test.uke.gov.pl"
-  end
-
-  def pola # without CSU
-    redirect_to "https://pola.uke.gov.pl"
-  end
-
-  def test_pola # without CSU
-    redirect_to "https://pola-test.uke.gov.pl"
-  end
-
-  def egzaminy
-    redirect_to "https://egzaminy.uke.gov.pl/users/saml/sign_in"
-  end
-
-  def test_egzaminy
-    redirect_to "https://egzaminy-test.uke.gov.pl/users/saml/sign_in"
-  end
-
-
-  # without login
-  def legalis
-    redirect_to "https://legalis.uke.gov.pl/index.html"
-  end
-
-  def amator
-    redirect_to "https://amator.uke.gov.pl/pl"
-  end
-
-  def wyszukiwarka
-  	redirect_to "https://wyszukiwarka.uke.gov.pl"
-  end
-
-  def confirmation
-  	redirect_to "https://confirmation.uke.gov.pl/pl"
-  end
-
-  def mapbook
-  	redirect_to "https://mapbook.uke.gov.pl"
-  end
-
-  def numeracja
-  	redirect_to "https://numeracja.uke.gov.pl/pl"
-  end
+    def check_without_sso_login(appname)
+      unless ['netpar2015', 'pola', 'szkolenia', 'amator', 'confirmation', 'legalis', 'mapbook', 'numeracja', 'wyszukiwarka', 
+              'test_netpar2015', 'test_pola'].include?(appname)
+         raise "Ruby injection"
+      end
+    end
 
 end

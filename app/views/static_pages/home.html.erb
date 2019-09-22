@@ -1,21 +1,14 @@
 <div class="container-fluid">
-  
+
   <div class="row">
     <div class="col-sm-6 bg-uke-authorization_<%= user_signed_in? %>">
       <br>
       <% unless user_signed_in? %>
         <h3 class="center"><%= fa_icon('lock', text: ' Systemy wymagające autoryzacji' ) %></h3>
-
-        <%= render "no_signed_partial_user", cached: true %>
-
       <% else %>
         <h3 class="center"><%= fa_icon('unlock', text: " #{current_user.first_name} #{current_user.last_name}, #{current_user.email}" ) %></h3>
-
-
-        <%= render "signed_partial_user", cached: true %>
-
       <% end %>
-
+      <%= render "partial_login", cached: true %>
 
     </div>
 
@@ -23,16 +16,8 @@
       <br>
       <h3 class="center"><%= fa_icon('lock-open', text: ' Systemy bez autoryzacji' ) %></h3>
 
-      <ul class="timeline">
+      <%= render "partial_nologin", cached: true %>
 
-        <%= render "nologin_legalis", cached: true %>
-        <%= render "nologin_amator", cached: true %>
-        <%= render "nologin_wyszukiwarka", cached: true %>
-        <%= render "nologin_confirmation", cached: true %>
-        <%= render "nologin_mapbook", cached: true %>
-        <%= render "nologin_numeracja", cached: true %>
-
-      </ul>
   </div>
 
 </div>
@@ -43,15 +28,13 @@
   <div class="container-fluid">
     <h3 class="center"><%= fa_icon('user-cog', text: ' Strefa Administratora!' ) %></h3>
     <div class="row">
+
       <div class="col-sm-6 bg-uke-authorization_<%= user_signed_in? %>">
-
-
         <% if user_signed_in? %>
 
-          <%= render "signed_partial_extend", cached: true %>
+          <%= render "partial_login_extend", cached: true %>
 
         <% end %>
-
       </div>
 
       <div class="col-sm-6 bg-uke-noauthorization">
@@ -60,9 +43,7 @@
       </div>
 
     </div>
-
   </div>
-
 </div>
 
 
@@ -75,107 +56,35 @@
 
   <div class="row">
 
-    <div class="col-sm-6">
-      <ul class="timeline">
-
-        <li class="timeline-inverted">
-          <div class="timeline-badge success"><span class="fa fa-home"></span></div>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-            </div>
-            <div class="timeline-body">
-              <p>System wewnętrzny przeznaczony dla pracowników UKE, wymagający autoryzacji</p>
-            </div>
-          </div>
-        </li>
-
-        <li class="timeline-inverted">
-          <div class="timeline-badge default"><span class="fa fa-home"></span></div>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-            </div>
-            <div class="timeline-body">
-              <p>System wewnętrzny przeznaczony dla pracowników UKE, nie wymagający autoryzacji</p>
-            </div>
-          </div>
-        </li>
-
-        <li class="timeline-inverted">
-          <div class="timeline-panel">
-            <div class="folded-csu"><h3>CSU</h3></div>
-            <div class="timeline-heading">
-            </div>
-            <div class="timeline-body">
-              <p>Program zintegrowany z Centralanym Systemem Uwierzytelniania UKE</p>
-            </div>
-          </div>
-        </li>
-
-        <li class="timeline-inverted">
-          <div class="timeline-panel">
-            <div class="folded-csu-future"><h3>CSU</h3></div>
-            <div class="timeline-heading">
-            </div>
-            <div class="timeline-body">
-              <p>W dniu dzisiejszym logowanie klasyczne (login, hasło). Planowana integracja z Centralanym Systemem Uwierzytelniania UKE</p>
-            </div>
-          </div>
-        </li>
-
-      </ul>
-
-    </div>
-
-    <div class="col-sm-6">
-      <ul class="timeline">
-        <li>
-          <div class="timeline-badge info"><i class="fa fa-globe-americas"></i></div>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-            </div>
-            <div class="timeline-body">
-              <p>System przeznaczony dla użytkowników zewnętrznych, dostępny w internecie, wymagający autoryzacji</p>
-            </div>
-          </div>
-        </li>
-
-        <li>
-          <div class="timeline-badge default"><i class="fa fa-globe-americas"></i></div>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-            </div>
-            <div class="timeline-body">
-              <p>System przeznaczony dla użytkowników zewnętrznych, dostępny w internecie, nie wymagający autoryzacji</p>
-            </div>
-          </div>
-        </li>
-
-        <li>
-          <div class="timeline-badge info"><i class="fa fa-cloud"></i></div>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-            </div>
-            <div class="timeline-body">
-              <p>System przeznaczony dla pracowników UKE, również dostępny w internecie, wymagający autoryzacji</p>
-            </div>
-          </div>
-        </li>
-
-        <li>
-          <div class="timeline-panel">
-            <div class="folded-without-csu"><h3>Logowanie klasyczne</h3></div>
-            <div class="timeline-heading">
-            </div>
-            <div class="timeline-body">
-              <p>Klasyczny sposób logowania (login, hasło). Integracja z Centralanym Systemem Uwierzytelniania UKE nie jest planowana</p>
-            </div>
-          </div>
-        </li>
-
-      </ul>
-
-    </div>
+    <%= render "partial_legend", cached: true %>
 
   </div>
 
 </div>
+<!-- id for glue opened apliaction url -->
+<div id="secret-link-id"></div>
+
+
+<script type="text/javascript">
+
+  $(document).ready(function() {
+
+    var app = "<%= open_application || '' %>";
+
+    if (app !=="") {
+      var href = linkToApplication(app);
+      if (href !=="") {
+        toastr.success('- otwieranie aplikacji', app);
+        $('#secret-link-id').html(href);
+        document.getElementById("myapplink").click();
+        $('#secret-link-id').html('');
+      } else {
+        toastr.error('Brak definicji url dla takiej aplikacji', app);
+      };
+    };
+
+  });
+  
+</script>
+
+

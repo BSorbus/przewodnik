@@ -2,9 +2,10 @@
   <div class="timeline-badge success"><span class="fa fa-home"></span></div>
   <div class="timeline-panel no-underline">
     <div class="folded-csu"><h3>CSU</h3></div>
-    
-    <%#= link_to websites_intranet_path do %>
-    <%= link_to 'https://testintranet.uke.gov.pl/c/portal/login', :method=>'post', :target => "_blank" do %>
+<!--     
+    <%#= link_to 'https://testintranet.uke.gov.pl/c/portal/login', :method=>'post', :target => "_blank" do %>
+ -->
+    <%= link_to websites_with_sso_login_path(app: 'test_intranet') do %>
       <div class="timeline-heading">
         <div class="col-sm-9"><h4 class="timeline-title">TEST Intranet <br><small>Asseco/TSI</small></h4></div>
         <div class="col-sm-3"><%= image_tag("uke-circle.png", class: "img-circle" ) %></div>

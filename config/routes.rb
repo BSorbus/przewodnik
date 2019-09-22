@@ -21,38 +21,14 @@ Rails.application.routes.draw do
 
   scope "(:locale)", locale: /en|pl/ do
 
-    post 'websites/esod'
     get 'websites/my_account'
-    get 'websites/csuext'
-    get 'websites/test_csuext'
-    get 'websites/pue'
-    get 'websites/test_pue'
-    get 'websites/pue_adm'
-    get 'websites/test_pue_adm'
-    get 'websites/pit'
-    get 'websites/cbo_admin'
-    get 'websites/test_cbo_admin'
-    get 'websites/test_pit'
-    get 'websites/intranet'
-    get 'websites/test_intranet'
-    get 'websites/szkolenia'
-    get 'websites/netpar2015'
-    get 'websites/test_netpar2015'
-    get 'websites/pola'
-    get 'websites/test_pola'
-    get 'websites/egzaminy'
-    get 'websites/test_egzaminy'
+    get 'websites/with_sso_login'
+    get 'websites/without_sso_login'
 
-    get 'websites/legalis'
-    get 'websites/amator'
-    get 'websites/wyszukiwarka'
-    get 'websites/confirmation'
-    get 'websites/mapbook'
-    get 'websites/numeracja'
+    # get 'datatables/lang'
 
-    get 'datatables/lang'
+    get 'static_pages/home'
 
-	  get 'static_pages/home'
     root to: 'static_pages#home'
 	end
 
