@@ -70,10 +70,14 @@
   $(document).ready(function() {
 
     var app = "<%= open_application || '' %>";
+ 
+       toastr.success('Kurawa mać 1');
 
     if (app !=="") {
-      var href = linkToApplication(app);
+       toastr.success('Kurawa mać 2');
+      var href = linkToApplication(app); 
       if (href !=="") {
+       toastr.success('Kurawa mać 3');
         toastr.success('- otwieranie aplikacji', app);
         $('#secret-link-id').html(href);
         document.getElementById("myapplink").click();
