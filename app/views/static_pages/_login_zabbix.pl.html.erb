@@ -1,0 +1,16 @@
+<li class="timeline-inverted">
+  <div class="timeline-badge success"><i class="fa fa-home"></i></div>
+  <div class="timeline-panel no-underline">
+    <div class="folded-without-csu"><h3>Logowanie klasyczne</h3></div>
+    <%= link_to websites_without_sso_login_path(app: 'zabbix') do %>
+      <div class="timeline-heading">
+        <div class="col-sm-9"><h4 class="timeline-title">Zabbix <br><small>Zabbix LLC</small></h4></div>
+        <div class="col-sm-3"><%= image_tag("zabbix.png", class: "img-circle" ) %></div>
+      </div>
+      <div class="timeline-body">
+        <div class="col-sm-12"><p>Monitoring infrastruktury IT</p></div>
+      </div>
+    <% end %>
+  </div>
+</li>
+

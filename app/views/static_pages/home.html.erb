@@ -30,15 +30,16 @@
     <div class="row">
 
       <div class="col-sm-6 bg-uke-authorization_<%= user_signed_in? %>">
-        <% if user_signed_in? %>
+        <%# if user_signed_in? %>
 
-          <%= render "partial_login_extend", cached: true %>
+          <%= render "partial_login_extend_left", cached: true %>
 
-        <% end %>
+        <%# end %>
       </div>
 
-      <div class="col-sm-6 bg-uke-noauthorization">
-        <br>
+      <div class="col-sm-6 bg-uke-authorization_false">
+
+          <%= render "partial_login_extend_right", cached: true %>
 
       </div>
 

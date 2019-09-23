@@ -1,0 +1,11 @@
+<ul class="timeline">
+
+  <% if Rails.application.secrets[:idp_for_production_instance] %>
+
+    <%= render "login_zabbix", cached: true %>
+    <%= render "login_matomo", cached: true %>
+
+  <% else %>
+
+  <% end %>
+</ul>
