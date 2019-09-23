@@ -74,7 +74,7 @@
      if (app !=="") {
       var href = linkToApplication(app); 
       if (href !=="") {
-        toastr.success('- otwieranie aplikacji', app);
+        toastr.success('- otwieranie aplikacji', "<%= open_application.camelize %>");
         $('#secret-link-id').html(href);
         document.getElementById("myapplink").click();
         $('#secret-link-id').html('');
