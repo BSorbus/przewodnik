@@ -2,6 +2,7 @@
 
   <% if Rails.application.secrets[:idp_for_production_instance] %>
 
+    <%= render "login_otrs", cached: true %>
     <%= render "login_zabbix", cached: true %>
     <%= render "login_zabbix_old", cached: true %>
     <%= render "login_matomo", cached: true %>
