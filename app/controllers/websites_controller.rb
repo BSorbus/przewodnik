@@ -24,7 +24,7 @@ class WebsitesController < ApplicationController
   private
     def check_with_sso_login(appname)
       unless ['cbo_admin', 'csuext', 'egzaminy', 'esod', 'esod_admin', 'intranet', 'pit', 'pue', 'pue_admin', 'regulaminy', 
-              'test_cbo_admin', 'test_csuext', 'test_egzaminy', 'test_esod', 'test_esod_admin', 'test_intranet', 'test_pit', 'test_pue', 'test_pue_adm', 'test_regulaminy'].include?(appname)
+              'test_cbo_admin', 'test_csuext', 'test_egzaminy', 'test_esod', 'test_esod_admin', 'test_intranet', 'test_pit', 'test_pue', 'test_pue_adm', 'test_regulaminy', 'test_hotspot'].include?(appname)
          raise "Ruby injection"
       end
     end
