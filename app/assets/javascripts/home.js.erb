@@ -17,7 +17,8 @@ function linkToApplication(appname){
         return '<a href="https://esod.uke.gov.pl/admin/sso/login" data-method="post" target="_blank" id="myapplink"></a>';
         break;
       case 'intranet':
-        return '<a href="https://intranet.uke.gov.pl/c/portal/login" data-method="post" target="_blank" id="myapplink"></a>';
+        return '<a href="https://intranet.uke.gov.pl/home/-/login/openid_connect_request?saveLastPath=false&_com_liferay_login_web_portlet_LoginPortlet_OPEN_ID_CONNECT_PROVIDER_NAME=CSU" target="_blank" id="myapplink"></a>';
+        // return '<a href="https://intranet.uke.gov.pl/c/portal/login" data-method="post" target="_blank" id="myapplink"></a>';
         break;
       case 'jira':
         return '<a href="https://jira.uke.gov.pl" target="_blank" id="myapplink"></a>';
@@ -65,7 +66,8 @@ function linkToApplication(appname){
         return '<a href="https://testesod.uke.gov.pl/admin/sso/login" data-method="post" target="_blank" id="myapplink"></a>';
         break;
       case 'test_intranet':
-        return '<a href="https://testintranet.uke.gov.pl/c/portal/login" data-method="post" target="_blank" id="myapplink"></a>';
+        return '<a href="https://testintranet.uke.gov.pl/home/-/login/openid_connect_request?saveLastPath=false&_com_liferay_login_web_portlet_LoginPortlet_OPEN_ID_CONNECT_PROVIDER_NAME=TestCSU" target="_blank" id="myapplink"></a>';
+        // return '<a href="https://testintranet.uke.gov.pl/c/portal/login" data-method="post" target="_blank" id="myapplink"></a>';
         break;
       case 'test_netpar2015':
         return '<a href="https://netpar2015-test.uke.gov.pl/users/sign_in" target="_blank" id="myapplink"></a>';
