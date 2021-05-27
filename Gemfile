@@ -58,7 +58,8 @@ gem 'bootstrap-sass', '3.4.1'
 gem 'font_awesome5_rails'
 gem 'jquery-rails'
 
-gem 'jquery-datatables', '= 1.10.16' #1.10.16 bo z .19 jest jakis problem z wyswietlaniem strzalek sortowania
+#gem 'jquery-datatables', '= 1.10.16' #1.10.16 bo z .19 jest jakis problem z wyswietlaniem strzalek sortowania
+gem 'jquery-datatables', '= 1.10.19.1' #1.10.16 bo z .19 jest jakis problem z wyswietlaniem strzalek sortowania
 gem 'ajax-datatables-rails' #, '= 0.4.0' jeżeli wywala się na custom_filter
 
 gem 'redis-rails'
