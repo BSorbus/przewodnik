@@ -30,7 +30,7 @@ class WebsitesController < ApplicationController
     end
 
     def check_without_sso_login(appname)
-      unless ['jira', 'confluence', 'matomo', 'netpar2015', 'pola', 'szkolenia', 'amator', 'confirmation', 'www', 'bip', 'cik', 'dziennik', 'legalis', 'mapbook', 'numeracja', 'wyszukiwarka', 
+      unless ['jira', 'confluence', 'matomo', 'netpar2015', 'pola', 'szkolenia', 'amator', 'confirmation', 'www', 'bip', 'cik', 'dziennik', 'mapbook', 'numeracja', 'wyszukiwarka', 
               'test_netpar2015', 'test_pola', 'otrs', 'zabbix', 'zabbix_old'].include?(appname)
          raise "Ruby injection"
       end
