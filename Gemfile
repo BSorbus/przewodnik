@@ -10,8 +10,8 @@ gem 'rails', '~> 5.2.6'
 gem 'pg'
 # Use Puma as the app server
 #gem 'puma', '~> 4.3.5'
-gem 'puma', '~> 5.3.2'
-gem 'nokogiri', '~> 1.11.5'
+gem 'puma', '~> 5.5.1'
+gem 'nokogiri', '~> 1.12.5'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -81,3 +81,4 @@ gem 'devise_saml_authenticatable'
 
 gem 'inky-rb', require: 'inky'
 gem 'premailer-rails'
+gem "addressable", ">= 2.8.0"
